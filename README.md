@@ -2,8 +2,8 @@
 
 [![Hugo](https://img.shields.io/badge/hugo-%5E0.62.0-ff4088?logo=hugo)](https://gohugo.io/)
 [![Hugo test](https://github.com/fabston/Hugo-Theme-Priam/actions/workflows/test.yml/badge.svg)](https://github.com/fabston/Hugo-Theme-Priam/actions/workflows/test.yml)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c67fdc63-1c98-4a25-818e-df2061722539/deploy-status)](https://app.netlify.com/sites/hugo-priam/deploys)
 [![GitHub license](https://img.shields.io/github/license/fabston/Hugo-Theme-Priam)](https://github.com/fabston/Hugo-Theme-Priam/blob/master/LICENSE)
-[![Code size](https://img.shields.io/github/languages/code-size/fabston/Hugo-Theme-Priam)](https://github.com/fabston/Hugo-Theme-Priam)
 
 **Priam** is a fast, clean, responsive Hugo theme. The theme was highly inspired by [XMin](https://github.com/yihui/hugo-xmin). XMin is based on simplicity while this theme is also focusing on styling and other useful functionalities.
 

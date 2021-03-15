@@ -27,7 +27,7 @@
       <div class="list-specs">
           {{ $category := index (.Params.categories) 0 }}
           <span class="button" style="border:2px solid #282C34">
-              <a href="{{ .Site.BaseURL }}categories/{{ lower $category }}" title="cd categories/{{ lower $category }}">{{ title $category }}</a>
+              <a href="{{ .Site.BaseURL }}/categories/{{ lower $category }}" title="cd categories/{{ lower $category }}">{{ title $category }}</a>
           </span>
 
           <i class="fa fa-calendar" aria-hidden="true"></i> {{ .Date.Format "Jan. 2, 2006" }} ∙ 

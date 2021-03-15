@@ -1,4 +1,4 @@
-baseurl: "/"
+baseurl: "https://priam.fabston.dev"
 languageCode: "en-us"
 title: "Priam Hugo Theme"
 theme: "priam"
