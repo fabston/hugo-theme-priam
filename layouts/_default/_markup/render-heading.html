@@ -1,0 +1,7 @@
+<span class="ancor-link">
+<h{{ .Level }} id="{{ .Anchor | safeURL }}">{{ .Text | safeHTML }}
+{{- if and (ge .Level 1) (le .Level 5) }}{{" " -}}
+<a class="header-link" href="#{{ .Anchor | safeURL }}"><i class="fa fa-hashtag" aria-hidden="true"></i></a>
+{{- end -}}
+</h{{ .Level }}>
+</span>

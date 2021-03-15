@@ -1,0 +1,27 @@
+{{ partial "header.html" . }}
+
+<style>.org-center { margin-left: auto; margin-right: auto; text-align: center; }</style>
+
+<div class="org-center">
+  
+  <h1 class="emoji"></h1>
+
+  <p>The page at
+  <mark><script>document.write(location.href);</script></mark>
+  doesn't exist.</p>
+   
+  <span class="button" style="margin-bottom:15px;background-color:#ffea64"><a href="{{ .Site.BaseURL }}">Get Me Out!</a></span>
+
+  </div>
+
+<script>
+  var errorEmojiContainer = document.getElementsByClassName('emoji')[0];
+  var emojiArray = [
+    '\\(o_o)/', '¯\\_(ツ)_/¯', '¯\\_( ͡°_ ͡°)_/¯', '¯\\_ಠᴥಠ_/¯', '( ͡°︹ ͡°)', '(^_^)b', '(·_·)',
+    '(=\'X\'=)', '(>_<)', '⊂((・▽・))⊃','(*′☉.̫☉)','(︶︹︺)','(Θ︹Θ)ს','¯\\_(⊙︿⊙)_/¯',
+  ];
+  var errorEmoji = emojiArray[Math.floor(Math.random() * emojiArray.length)];
+  errorEmojiContainer.appendChild(document.createTextNode(errorEmoji));
+</script>
+
+{{ partial "footer.html" . }}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{ if .IsHome }}
+    <title>{{ .Site.Title }}{{ if .Site.Params.description }} | {{ .Site.Params.description }} {{ end }}</title>
+    <meta property="og:title" content="{{ .Site.Title }} | {{ .Site.Params.subtitle }}">
+    <meta property="og:type" content="website">
+    {{ else }}
+    <title>{{ .Title }}{{ with .Params.subtitle }} | {{ . }} {{ end }} | {{ .Site.Title }}</title>
+    <meta property="og:title" content="{{ .Title }} | {{ .Site.Title }}">
+    {{ end }}
+    <meta name="twitter:card" content="summary">
+    {{ with .Description }}
+    {{ $.Scratch.Set "summary" (markdownify .) }}
+    {{ else }}
+    {{ $.Scratch.Set "summary" ((delimit (findRE "(<p.*?>(.|\n)*?</p>\\s*)+" .Content) "[&hellip;] ") | plainify | truncate (default 200 .Site.Params.summary_length) (default " &hellip;" .Site.Params.text.truncated)) }}
+    {{ end }}
+
+    {{ if eq .RelPermalink "/" }}
+    <meta property="description" content="{{ .Site.Params.description }}">
+    <meta property="og:description" content="{{ .Site.Params.description }}">
+    <meta name="description" content="{{ .Site.Params.description }}">
+    {{ else }}
+    {{ with ($.Scratch.Get "summary") }}
+    <meta property="description" content="{{ . }}">
+    <meta property="og:description" content="{{ . }}">
+    <meta name="description" content="{{ . }}">
+    {{ end }}
+    {{ end }}
+
+    {{ if .IsHome }}
+    <meta name="twitter:image" content="{{ .Site.Params.logo }}">
+    <meta name="twitter:card" content="summary_large_image"/>
+    {{ else }}
+    {{ range (findRE "<img src=\"https?://[^\"]+" .Content 1) }}
+    {{ $.Scratch.Set "autoImage" true }}
+    <meta name="twitter:image" content="{{ replaceRE "<img src=\"" "" . | htmlUnescape }}">
+    <meta name="twitter:card" content="summary_large_image"/>
+    {{ end }}
+
+    {{ with .Site.Params.twitterImage }}
+    {{ if not ($.Scratch.Get "autoImage") }}
+    <meta name="twitter:image" content="{{ absURL . }}">
+    {{ end }}
+    {{ end }}
+    {{ end }}
+    <link rel="stylesheet" href="{{ "/css/style.css" | relURL }}" />
+    <link rel="stylesheet" href="{{ "/css/fonts.css" | relURL }}" />
+
+    <link rel="stylesheet" href="{{ "/fork-awesome/css/fork-awesome.min.css" | relURL }}" />
+    
+    <script src="{{ "/js/main.js" | relURL }}"></script>
+
+    {{ partial "head_custom.html" . }}
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      {{ range .Site.Menus.main }}
+      <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+      {{ end }}
+    </ul>
+    <hr class="header">
+    </nav>

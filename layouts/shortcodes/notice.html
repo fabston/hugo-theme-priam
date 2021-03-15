@@ -1,0 +1,152 @@
+
+{{/* Available notice types: warning, info, attention, success, book, tip */}}
+{{- $noticeType := .Get 0 -}}
+{{/* Workaround markdownify inconsistency for single/multiple paragraphs */}}
+{{- $raw := (markdownify .Inner | chomp) -}}
+{{- $block := findRE "(?is)^<(?:address|article|aside|blockquote|canvas|dd|div|dl|dt|fieldset|figcaption|figure|footer|form|h(?:1|2|3|4|5|6)|header|hgroup|hr|li|main|nav|noscript|ol|output|p|pre|section|table|tfoot|ul|video)\\b" $raw 1 -}}
+{{/* Count how many times we've called this shortcode and load the css if it's the first time */}}
+{{- if not ($.Page.Scratch.Get "noticecount") -}}
+<style type="text/css">
+.notice{
+    padding:18px;
+    line-height:24px;
+    margin-bottom:24px;
+    margin-top:24px;
+    border-radius:4px;
+    color:#D8D8D8;
+    box-shadow: 4px 4px 4px #282C34;
+    background:#e7f2fa
+    }
+div.notice ul {
+    margin-bottom: -7px;
+    }   
+.notice p:last-child{
+    margin-bottom:0
+    }
+
+.notice-title{
+    margin:-18px -18px 12px;
+    padding:4px 18px;
+    font-weight:700;
+    color:#efefef;
+    background:#6ab0de
+    }
+
+.notice.warning .notice-title{
+    background:rgb(255, 145, 0, 0.2)
+    }
+.notice.warning .icon-notice svg{
+    color: #FF9100
+    }
+.notice.warning{
+    border-left: 4px solid #FF9100;
+    background:rgb(255, 145, 0, 0.1)
+    }
+
+.notice.info .notice-title{
+    background:rgb(0, 184, 212, 0.2)
+    }
+.notice.info .icon-notice svg{
+    color: #00B8D4
+    }
+.notice.info{
+    border-left: 4px solid #00B8D4;
+    background:rgb(0, 184, 212, 0.1)
+    }
+
+.notice.attention .notice-title{
+    background:rgb(255, 82, 82, 0.2);
+    }
+.notice.attention .icon-notice svg{
+    color: #ff5252
+    }
+.notice.attention{
+    border-left: 4px solid #ff5252;
+    background:rgb(255, 82, 82, 0.1)
+    }
+
+.notice.success .notice-title{
+    background:rgb(0, 200, 83, 0.2)
+    }
+.notice.success .icon-notice svg{
+    color: #00C853
+    }
+.notice.success{
+    border-left: 4px solid #00C853;
+    background:rgb(0, 200, 83, 0.1)
+    }
+
+.notice.book .notice-title{
+    background:rgb(158, 158, 158, 0.2)
+    }
+.notice.book .icon-notice svg{
+    color: #9E9E9E
+    }
+.notice.book{
+    border-left: 4px solid #9E9E9E;
+    background:rgb(158, 158, 158, 0.1)
+    }
+
+.notice.tip .notice-title{
+    background:rgb(0, 191, 165, 0.2)
+    }
+.notice.tip .icon-notice svg{
+    color: #00BFA5
+    }
+.notice.tip{
+    border-left: 4px solid #00BFA5;
+    background:rgb(0, 191, 165, 0.1)
+    }
+
+.icon-notice{
+    display:inline-flex;
+    align-self:center;
+    margin-right:8px
+    }
+
+.icon-notice img,.icon-notice svg{
+    height:1em;
+    width:1em;
+    fill:currentColor
+    }
+
+.icon-notice img,.icon-notice.baseline svg{
+    top:0.125em;
+    position:relative
+    }
+</style>
+
+<svg width="0" height="0" display="none" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="tip-notice" viewBox="0 0 1200 1200" preserveAspectRatio="xMidYMid meet">
+        <path d="M567.663 0v190.423h64.679V0h-64.685h.006zm-264.11 57.225l-52.992 37.103l109.203 155.946l52.963-37.104L303.553 57.225zm592.886 0L787.268 213.171l52.971 37.104L949.44 94.328l-52.992-37.103h-.009zm-296.45 185.299c-158.227 0-286.493 96.083-286.493 214.625l162.772 492.948h247.47l162.758-492.948c0-118.54-128.258-214.625-286.492-214.625h-.015zM85.465 299.673l-22.099 60.814l178.849 65.114l22.181-60.785l-178.935-65.143h.004zm1029.062 0l-178.936 65.148l22.106 60.792l178.936-65.125l-22.106-60.815zM255.756 577.681l-183.9 49.326l16.686 62.431l183.9-49.255l-16.683-62.502h-.003zm688.48 0l-16.674 62.501l183.9 49.247l16.674-62.432l-183.9-49.318v.002zM472.66 986.032v85.686h254.687v-85.673H472.661l-.001-.013zm0 128.282V1200h254.687v-85.672H472.661l-.001-.014z"/>
+    </symbol>
+    <symbol id="book-notice" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet">
+        <path d="M6.012 18H21V4a2 2 0 0 0-2-2H6c-1.206 0-3 .799-3 3v14c0 2.201 1.794 3 3 3h15v-2H6.012C5.55 19.988 5 19.805 5 19s.55-.988 1.012-1zM8 6h9v2H8V6z"/>
+    </symbol>
+    <symbol id="success-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">
+        <path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/>
+    </symbol>
+    <symbol id="attention-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">
+        <path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/>
+    </symbol>
+    <symbol id="warning-notice" viewBox="0 0 576 512" preserveAspectRatio="xMidYMid meet">
+        <path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/>
+    </symbol>
+    <symbol id="info-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">
+        <path d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"/>
+    </symbol>
+</svg>
+
+{{- end -}}
+{{- $.Page.Scratch.Add "noticecount" 1 -}}
+<div class="notice {{ .Get "type" }}" {{ if len .Params | eq 2 }} id="{{ .Get 1 }}" {{ end }}>
+<p class="first notice-title">
+    <span class="icon-notice baseline">
+        <svg>
+            <use href="#{{ .Get "type" }}-notice"></use>
+        </svg>
+    </span>
+    {{ .Get "title" }}
+</p>
+{{- if or $block (not $raw) }}{{ $raw }}{{ else }}<p>{{ $raw }}</p>{{ end -}}
+</div>

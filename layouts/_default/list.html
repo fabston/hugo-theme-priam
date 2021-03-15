@@ -1,0 +1,46 @@
+{{ partial "header.html" . }}
+
+<div class="list-class">
+  {{if not .IsHome }}
+      {{- $taxonomy := .Data.Singular -}}
+      {{- if eq $taxonomy "category" -}}
+          <h1><span class="terminal-prompt">cd categories/{{ lower .Title  | markdownify }}</h1></span>
+      {{- else if eq $taxonomy "tag" -}}
+          <h1><span class="terminal-prompt">cd tags/{{ lower .Title  | markdownify }}</h1></span>
+      {{- else -}}    
+          <h1><span class="terminal-prompt">cd {{ lower .Title  | markdownify }}</h1></span>
+      {{- end -}}
+  {{ end }}
+</div>
+
+{{ .Content }}
+
+<div class="section">
+  {{ if not .IsHome}}
+      {{ range $index, $element := .Paginator.Pages }}	
+      <div class="list-item">
+          <a class="list-title" href="{{ .Permalink }}">{{ .Title }}</a>
+          {{$page := .}}
+          <div class="list-description">
+              {{with .Description}} {{ . }} {{end}}
+          </div>
+      <div class="list-specs">
+          {{ $category := index (.Params.categories) 0 }}
+          <span class="button" style="border:2px solid #282C34">
+              <a href="{{ .Site.BaseURL }}categories/{{ lower $category }}" title="cd categories/{{ lower $category }}">{{ title $category }}</a>
+          </span>
+
+          <i class="fa fa-calendar" aria-hidden="true"></i> {{ .Date.Format "Jan. 2, 2006" }} ∙ 
+          <i class="fa fa-clock-o" aria-hidden="true"></i> {{ partial "time-to-read.html" . }}
+      </div>
+</div>
+
+{{end}}
+
+<br>
+
+{{ partial "pagination.html" . }}
+
+{{end}}
+
+{{ partial "footer.html" . }}
