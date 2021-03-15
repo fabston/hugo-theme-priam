@@ -1,12 +1,20 @@
 # Priam | [Demo](https://priam.fabston.dev)
 
-[![Hugo](https://img.shields.io/badge/Hugo-%5E0.62.0-ff4088?logo=hugo)](https://gohugo.io/)
+[![Hugo](https://img.shields.io/badge/hugo-%5E0.62.0-ff4088?logo=hugo)](https://gohugo.io/)
+[![Hugo test](https://github.com/fabston/Hugo-Theme-Priam/actions/workflows/test.yml/badge.svg)](https://github.com/fabston/Hugo-Theme-Priam/actions/workflows/test.yml)
 [![GitHub license](https://img.shields.io/github/license/fabston/Hugo-Theme-Priam)](https://github.com/fabston/Hugo-Theme-Priam/blob/master/LICENSE)
 [![Code size](https://img.shields.io/github/languages/code-size/fabston/Hugo-Theme-Priam)](https://github.com/fabston/Hugo-Theme-Priam)
 
 **Priam** is a fast, clean, responsive Hugo theme. The theme was highly inspired by [XMin](https://github.com/yihui/hugo-xmin). XMin is based on simplicity while this theme is also focusing on styling and other useful functionalities.
 
-[![Website](https://github.com/fabston/Hugo-Theme-Priam/blob/main/images/website.png)](https://priam.fabston.dev)
+[![Mockup](https://github.com/fabston/Hugo-Theme-Priam/blob/main/images/mockup.png)](https://priam.fabston.dev)
+
+### Features:
+- Extended Shortcodes
+- Custom header and footer
+- Straightforward customization via `config.toml`
+- Styled Markdown throughout, including post titles
+- Syntax highlighting
 
 ## Get the theme
 

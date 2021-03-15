@@ -1,0 +1,10 @@
+{{- /* Plausible Analytics */ -}}
+{{- with $.Site.Params.plausible -}}
+    <script async defer data-domain="{{- $.Site.Params.plausible -}}" src="https://plausible.io/js/plausible.js"></script>
+{{- end -}}
+
+
+{{- /* Goat Counter Analytics */ -}}
+{{- with $.Site.Params.goatcounter -}}
+    <script data-goatcounter="https://{{- $.Site.Params.goatcounter -}}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+{{- end -}}

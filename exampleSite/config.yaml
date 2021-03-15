@@ -30,6 +30,8 @@ menu:
 params:
   description: "A minimal Hugo website"
   footer: ""
+  plausible: ""
+  goatcounter: ""
 
 markup:
   goldmark:

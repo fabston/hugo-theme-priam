@@ -1,0 +1,40 @@
+name: test
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        hugo: ['0.81.0']
+    
+      fail-fast: true
+
+
+    steps:
+      - uses: actions/checkout@main
+
+      - name: Set up Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Install tools
+        run: |
+          sudo apt install curl jq
+          npm i -g postcss postcss-cli autoprefixer
+      - name: Test with Hugo ${{ matrix.hugo }}
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: ${{ matrix.hugo }}
+          extended: true
+
+      - name: Build with Hugo ${{ matrix.hugo }}
+        run: |
+          cd exampleSite
+          HUGO_THEME="Hugo-Theme-Priam" hugo --themesDir ../.. -v
+      - name: Test HTML from Hugo ${{ matrix.hugo }}
+        run: docker run -v ${GITHUB_WORKSPACE}/public/:/mnt 18fgsa/html-proofer mnt --disable-external
