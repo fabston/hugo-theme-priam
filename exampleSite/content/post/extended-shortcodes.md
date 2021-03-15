@@ -12,6 +12,12 @@ tags:
 
 # Notice
 
+```markdown
+{{</* notice type="tip" title="Yout title" */>}}
+Your text goes here
+{{</* /notice */>}}
+```
+
 {{< notice type="tip" title="Tip notice" >}}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum nibh non felis pretium bibendum. Praesent non mauris varius, semper lorem et, tempor erat. Fusce non mi enim. Quisque a lectus et lectus accumsan vestibulum et eget turpis. Aliquam et vehicula tellus, ut efficitur sem. Nullam quis rhoncus dui. Proin ut feugiat est. In ut urna ex. 
 {{< /notice >}}
@@ -35,3 +41,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum nibh non 
 {{< notice type="attention" title="Attention notice" >}}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum nibh non felis pretium bibendum. Praesent non mauris varius, semper lorem et, tempor erat. Fusce non mi enim. Quisque a lectus et lectus accumsan vestibulum et eget turpis. Aliquam et vehicula tellus, ut efficitur sem. Nullam quis rhoncus dui. Proin ut feugiat est. In ut urna ex. 
 {{< /notice >}}
+
+# Fork Awesome
+
+[Fork Awesome](https://forkaweso.me/Fork-Awesome/) is a privacy respecting alternative to Font Awesome. This theme comes with it and you can simply add icons with the following shortcode:
+
+```markdown
+{{</* forkawesome fa fa-star */>}}
+```
