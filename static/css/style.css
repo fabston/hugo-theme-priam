@@ -640,10 +640,10 @@ mark {
  transform:translate(1px,2px)!important;
  box-shadow:none!important
 }
-.button a, .button a:hover{
+.button-class a, .button a:hover{
   color: #181B21;
 }
-.button a:before {
+.button-class a:before {
   background: transparent;
 }
 

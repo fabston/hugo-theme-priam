@@ -1,12 +1,12 @@
 name = "Priam"
 license = "MIT"
-licenselink = "https://github.com/fabston/hugo-theme-priam/blob/master/LICENSE.md"
-description = "Minimal theme for Hugo"
-homepage = "https://priam.fabston.dev"
-tags = ["minimal", "blog", "personal", "clean", "simple", "minimalist"]
+licenselink = "https://github.com/fabston/Hugo-Theme-Priam/blob/main/LICENSE.md"
+description = "A fast, clean, responsive Hugo theme"
+homepage = "https://github.com/fabston/Hugo-Theme-Priam"
+tags = ["minimal", "blog", "personal", "clean", "simple", "responsive", "dark"]
 features = ["blog"]
 min_version = "0.49"
 
 [author]
   name = "Fabston"
-  homepage = "https://fabston.dev"
+  homepage = "https://github.com/fabston"

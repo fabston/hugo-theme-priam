@@ -29,6 +29,7 @@ Priam comes with an fully configured example site. For a quick preview:
 ```terminal
 cd themes/priam/exampleSite/
 ```
+
 ```terminal
 hugo serve  --themesDir ../..
 ```

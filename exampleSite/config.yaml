@@ -28,11 +28,11 @@ menu:
       weight: 3
 
 params:
-  description: "A minimal Hugo website"
+  description: "A fast, clean, responsive Hugo theme"
   footer: ""
   plausible: ""
   goatcounter: ""
-
+  
 markup:
   goldmark:
     renderer:

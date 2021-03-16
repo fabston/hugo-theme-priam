@@ -48,7 +48,7 @@ author:
 ```
 
 {{< notice type="tip" title="Example config.yaml" >}}
-An example `config.yaml` can be found on GitHub in the `exampleSite` tab [here](https://github.com/fabston/hugo-priam/exampleSite/config.yaml).
+An example `config.yaml` can be found on GitHub in the `exampleSite` tab [here](https://github.com/fabston/Hugo-Theme-Priam/blob/main/exampleSite/config.yaml).
 {{< /notice >}}
 
 # Custom layouts

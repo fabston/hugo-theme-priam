@@ -16,22 +16,24 @@
 {{ .Content }}
 
 <div class="section">
-  {{ if not .IsHome}}
-      {{ range $index, $element := .Paginator.Pages }}	
-      <div class="list-item">
-          <a class="list-title" href="{{ .Permalink }}">{{ .Title }}</a>
-          {{$page := .}}
-          <div class="list-description">
-              {{with .Description}} {{ . }} {{end}}
-          </div>
-      <div class="list-specs">
-          {{ $category := index (.Params.categories) 0 }}
-          <span class="button" style="border:2px solid #282C34">
-              <a href="{{ .Site.BaseURL }}/categories/{{ lower $category }}" title="cd categories/{{ lower $category }}">{{ title $category }}</a>
-          </span>
+    {{ if not .IsHome}}
+        {{ range $index, $element := .Paginator.Pages }}	
+        <div class="list-item">
+            <a class="list-title" href="{{ .Permalink }}">{{ .Title }}</a>
+            {{$page := .}}
+            <div class="list-description">
+                {{with .Description}} {{ . }} {{end}}
+            </div>
+        <div class="list-specs">
+            {{ $category := index (.Params.categories) 0 }}
+            <span class = "button-class">
+                <a href="{{ .Site.BaseURL }}/categories/{{ lower $category }}" title="cd categories/{{ lower $category }}">
+                    <span class="button" style="border:2px solid #282C34">{{ title $category }}</span>
+                </a>
+            </span>
 
-          <i class="fa fa-calendar" aria-hidden="true"></i> {{ .Date.Format "Jan. 2, 2006" }} ∙ 
-          <i class="fa fa-clock-o" aria-hidden="true"></i> {{ partial "time-to-read.html" . }}
+            <i class="fa fa-calendar" aria-hidden="true"></i> {{ .Date.Format "Jan. 2, 2006" }} ∙ 
+            <i class="fa fa-clock-o" aria-hidden="true"></i> {{ partial "time-to-read.html" . }}
       </div>
 </div>
 
