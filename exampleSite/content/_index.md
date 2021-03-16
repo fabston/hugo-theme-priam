@@ -2,9 +2,7 @@
 title: Home
 ---
 
-<h1 class="terminal-prompt">hugo-priam</h1>
-
-**Priam** is a Hugo theme written by [Fabston](https://github.com/fabston). The theme was highly inspired by the [XMin](https://github.com/yihui/hugo-xmin) Theme. XMin is based on simplicity while this theme is also focusing on styling and other useful functionalities.
+**Priam** is a Hugo theme written by [Fabston](https://github.com/fabston). The theme was inspired by [XMin](https://github.com/yihui/hugo-xmin). XMin is based on simplicity while this theme is also focusing on styling and other useful functionalities.
 
 All pages not under the root directory of the website are listed below. You can also visit the list page of a single section, e.g., [Posts](/post/), [Tags](/tags), [Categories](/categories). See the [About](/about/) page for the usage of this theme.
 

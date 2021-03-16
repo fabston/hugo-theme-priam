@@ -1,18 +1,5 @@
 {{ partial "header.html" . }}
 
-<div class="list-class">
-  {{if not .IsHome }}
-      {{- $taxonomy := .Data.Singular -}}
-      {{- if eq $taxonomy "category" -}}
-          <h1><span class="terminal-prompt">cd categories/{{ lower .Title  | markdownify }}</h1></span>
-      {{- else if eq $taxonomy "tag" -}}
-          <h1><span class="terminal-prompt">cd tags/{{ lower .Title  | markdownify }}</h1></span>
-      {{- else -}}    
-          <h1><span class="terminal-prompt">cd {{ lower .Title  | markdownify }}</h1></span>
-      {{- end -}}
-  {{ end }}
-</div>
-
 {{ .Content }}
 
 <div class="section">
