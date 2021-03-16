@@ -10,12 +10,14 @@
         <i class="fa fa-calendar" aria-hidden="true"></i> {{ .Date.Format "Jan. 2, 2006" }} ∙ 
         <i class="fa fa-clock-o" aria-hidden="true"></i> {{ partial "time-to-read.html" . }}
         <br>
-        {{ range .Params.tags }}
-        <span class = "button-class">
-            <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" title="cd tags/{{ lower . }}">
-              <span class="button" style="border:2px solid #282C34">{{ title . }}</span>
-            </a>
-        </span>
+        {{ if .Params.tags }}
+            {{ range .Params.tags }}
+            <span class = "button-class">
+                <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" title="cd tags/{{ lower . }}">
+                <span class="button" style="border:2px solid #282C34">{{ lower . }}</span>
+                </a>
+            </span>
+            {{ end }}
         {{ end }}
     </div>
 

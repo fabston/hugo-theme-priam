@@ -9,7 +9,7 @@ author: Fabston
 
 For this example site, I defined permalinks for one section, `post`. This is optional, and it is up to your personal taste of URLs.
 
-```yaml {linenos=table}
+```yaml
 permalinks:
   post: "/post/:slug/"
 ```
@@ -34,7 +34,7 @@ Alternatively, you can add `menu: main` to the YAML metadata of any of your page
 
 The page footer and description can be defined in `.Params` e.g.:
 
-```yaml {linenos=table}
+```yaml
 params:
   description: "A minimal Hugo website"
   footer: "This theme is cool!"
@@ -42,7 +42,7 @@ params:
 
 The page author will be set in `.Author` e.g.:
 
-```yaml {linenos=table}
+```yaml
 author:
   name: Priam Theme
 ```
@@ -54,7 +54,3 @@ An example `config.yaml` can be found on GitHub in the `exampleSite` tab [here](
 # Custom layouts
 
 There are two layout files under `layouts/partials/` that you may want to override: `head_custom.html` and `foot_custom.html`. This is how you inject arbitrary HTML code to the head and foot areas.
-
-You can certainly enable highlight.js for syntax highlighting by yourself through `head_custom.html` and `foot_custom.html` if you want.
-
-If you do not like the default fonts (e.g., `Palatino`), you may provide your own `static/css/fonts.css` under the root directory of your website to override the `fonts.css` in the theme.
