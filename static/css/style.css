@@ -93,8 +93,8 @@ main {
   line-height:4rem;
   color:#D8D8D8
  }
-.navigation a:before {
-  background: transparent;
+ .navigation a:hover {
+  text-decoration: none; 
 }
 .navigation a:hover,
 .navigation a:focus {
@@ -217,17 +217,12 @@ main {
  opacity:1;
  color: #D8D8D8;
 }
-.footer a:before {
-  opacity:1;
-  background: #D8D8D8; 
- }
-
 .footer-rss a:hover {
   color: orange;
   text-decoration: none;
 }
-.footer-rss a:before {
-  background: transparent;
+.footer-rss a:hover {
+  text-decoration: none; 
 }
 
 /*--------------------------------------------------------------
@@ -261,8 +256,8 @@ main {
 .list-title:hover{
  text-shadow:0 -2px 0 rgb(153, 153, 153, 0.5),2px 2px 1px rgb(153, 153, 153, 0.5),4px 4px 1px rgb(153, 153, 153, 0.5)!important
 }
-.list-title:before{
-  background: transparent;
+.list-title:hover {
+  text-decoration: none;
 }
 
 .list-description {
@@ -310,8 +305,8 @@ main {
 .pagination li:hover a {
  color:#4495C9
 }
-.pagination a:before {
-  background: transparent;
+.pagination a:hover {
+  text-decoration: none;
 }
 .pagination li:before,
 .pagination li:after {
@@ -402,9 +397,6 @@ main {
  -moz-transition-property:all .2s ease-out;
  -o-transition-property:all .2s ease-out
 }
-.post-footer-right a:before {
-  background: transparent;
-}
 
 /* Footer Left */
 .post-footer-left {
@@ -488,20 +480,19 @@ main {
  float:left
 }
 .post-nav a.prev:hover {
+ text-decoration: none;
  transform:translateX(-4px)
 }
-.post-nav a.prev:before {
+.post-nav a.prev:hover {
  background: transparent;
 }
 .post-nav a.next {
  float:right
 }
 .post-nav a.next:hover {
+ text-decoration: none;
  transform:translateX(4px)
 } 
-.post-nav a.next:before {
- background: transparent;
-}
 
 /* Table of Contents */
 .toc__menu ul {
@@ -595,10 +586,6 @@ main {
 .accordion-content a {
   color:#D8D8D8
 }
-.accordion-content a:before {
-    opacity:1;
-    background: #D8D8D8; 
-}
 
 /*--------------------------------------------------------------
 # Other Elements
@@ -607,28 +594,11 @@ main {
 /* Website links */
 a {
   color: #4495C9;
-  position: relative;
-  text-decoration: none;
-  transition: all 0.15s ease-out;
-}
-a:before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 1px;
-  bottom: 0px;
-  left: 0;
-  background: #4495C9;
-  visibility: hidden;
-  transform: scaleX(0);
-  transition: all 0.3s ease-in-out 0s;
+  text-decoration: none; 
 }
 a:hover {
   transition: all 0.15s ease-out;
-}
-a:hover:before {
-  visibility: visible;
-  transform: scaleX(1);
+  text-decoration: underline; 
 }
 
 /* Horizontal Rules */
@@ -727,8 +697,8 @@ mark {
 .button-class a, .button a:hover{
   color: #181B21;
 }
-.button-class a:before {
-  background: transparent;
+.button-class a:hover {
+  text-decoration: none; 
 }
 
 /* Ancor links */
@@ -748,8 +718,8 @@ mark {
   -moz-transition-property:all .4s ease-out;
   -o-transition-property:all .4s ease-out
 }
-.ancor-link a:before{
-  background: transparent;
+.ancor-link a:hover {
+  text-decoration: none; 
 }
 
 /* Terminal cursor */
@@ -821,8 +791,8 @@ blockquote.hint {
 figure {
   display: table;
 }
-figure a:before{
-  background: transparent;
+.figure a:hover {
+  text-decoration: none; 
 }
 .figure-img {
   border: 3px solid rgba(255, 255, 255, 0.15);
@@ -848,7 +818,7 @@ figcaption.figure-credit {
 .figure-credit a{
   color: #999999;
 }
-.figure-credit a:before{
+.figure-credit a:hover{
   background: #999999;
 }
 @media screen and (max-width:600px) {
