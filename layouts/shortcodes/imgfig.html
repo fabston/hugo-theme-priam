@@ -1,0 +1,22 @@
+{{/*
+
+    USAGE:
+    
+    {{< imgfig url="IMAGE URL" alt="Image Alt Describtion" crediturl="Image Credit URL" >}}
+    
+*/}}
+
+<figure class="figure">
+    {{ $url := .Get "url" }}
+    {{ if not (findRE "^(/|http(s?)://)" $url) }}
+        {{ $url = ($.Page.Resources.GetMatch $url).RelPermalink }}
+    {{ end }}
+    <a href="{{ $url }}"><img src="{{ $url }}" alt="{{ .Get "alt" }}" class="figure-img"></a>
+    {{ if .Get "title"}}
+    <figcaption class="figure-caption">{{ .Get "title" | markdownify }}</figcaption>
+    {{ end }}
+    {{ if .Get "credit"}}
+    {{ $crediturl := .Get "crediturl" }}
+    <figcaption class="figure-credit">Photo by <a href="{{ $crediturl }}" target="_blank" rel="noopener" aria-label="" title="{{ $crediturl }}">{{ .Get "credit" }}</a></figcaption>
+    {{ end }}
+</figure>

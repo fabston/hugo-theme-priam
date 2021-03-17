@@ -1,3 +1,11 @@
+{{/*
+
+  USAGE:
+
+      {{< forkawesome fa fa-star >}}
+
+*/}}
+
 {{ if .Get 0}}
   <i class="{{ range .Params }}{{ . }} {{ end }}" aria-hidden="true"></i>
 {{ end }}
