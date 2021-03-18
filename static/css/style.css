@@ -62,8 +62,13 @@ h5 {
     0px;
 }
 
-img, iframe, video { 
+img { 
   max-width: 100%;
+  border: 4px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 4px 4px 4px #282C34;
+} 
+iframe, video { 
+   max-width: 100%;
 }
 main {
   hyphens: auto;
@@ -622,7 +627,13 @@ table {
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 4px 4px 4px #282C34;
 }
-
+@media only screen and (max-width:600px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+   }
+}
 table thead th {
   border-bottom: 1px solid #282C34;
 }
@@ -795,7 +806,7 @@ figure {
   text-decoration: none; 
 }
 .figure-img {
-  border: 3px solid rgba(255, 255, 255, 0.15);
+  border: 4px solid rgba(255, 255, 255, 0.15);
   box-shadow: 4px 4px 4px #282C34;
   border-radius: 3px;
  }
@@ -903,7 +914,10 @@ pre {
  .highlight>.chroma {
   position:static;
   z-index:1;
-  border-radius:4px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
  }
  pre.chroma code {
   font-size:.92em;
@@ -960,7 +974,72 @@ pre {
   overflow:auto;
   display:block
  }
- /* Terminal */ .language-terminal::before { color: #999999; content:"$ " }
+
+.chroma [data-lang]:before {
+ position:absolute;
+ z-index:0;
+ top:-23px;
+ left:0;
+ content:attr(data-lang);
+ font-size: calc(10px * var(--scale));
+ border-top-left-radius: 2px;
+ border-top-right-radius: 2px;
+ border-bottom-right-radius: 0px;
+ border-bottom-left-radius: 0px;
+ position: absolute;
+ line-height: 14px;
+ letter-spacing: 0.5px;
+ color: #999999; 
+ background-color: #282C34;
+ padding: 4px 4px 5px 4px;
+ opacity: 0.6;
+}
+
+/* Copy button */ 
+@media only screen and (min-width:700px) {
+  .copy-code-button {
+    position: absolute;
+    z-index: 2;
+    right: 5px;
+    top: 5px;
+    font-size: calc(11px * var(--scale));
+    font-weight: 700;
+    line-height: 8px;
+    letter-spacing: 0.5px;
+    width: calc(58px * var(--scale));
+    color: #D8D8D8;
+    background-color: transparent;
+    white-space: nowrap;
+    padding: 4px 4px 5px 4px;
+    border-radius: 13px;
+    margin: 0 0 0 1px;
+    cursor: pointer;
+    opacity: 0.3;
+  }
+
+  .copy-code-button:hover,
+  .copy-code-button:focus,
+  .copy-code-button:active,
+  .copy-code-button:active:hover {
+    color: #282C34;
+    background-color: #D8D8D8;
+    opacity: 0.6;
+  }
+
+  .copyable-text-area {
+    position: absolute;
+    height: 0;
+    z-index: -1;
+    opacity: .01;
+  }
+}
+@media only screen and (max-width:700px) {
+  .copy-code-button {
+    visibility: hidden;
+    position: absolute;
+  }
+}
+
  /* Keyword */ .chroma .k { color: #66d9ef }
  /* KeywordConstant */ .chroma .kc { color: #66d9ef }
  /* KeywordDeclaration */ .chroma .kd { color: #66d9ef }

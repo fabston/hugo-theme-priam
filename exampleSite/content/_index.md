@@ -10,13 +10,13 @@ All pages not under the root directory of the website are listed below. You can 
 
 Run from the root of your Hugo site:
 
-```terminal
+```shell
 git clone https://github.com/fabston/Hugo-Theme-Priam.git themes/priam
 ```
 
 Alternatively, you can include this repository as a [git submodule](https://git-scm.com/docs/gitsubmodules). This makes it easier to update this theme if you have your Hugo site in git as well:
 
-```terminal
+```shell
 git submodule add https://github.com/fabston/Hugo-Theme-Priam.git themes/priam
 ```
 
@@ -24,11 +24,11 @@ git submodule add https://github.com/fabston/Hugo-Theme-Priam.git themes/priam
 
 Priam comes with an fully configured example site. For a quick preview:
 
-```terminal
+```shell
 cd themes/priam/exampleSite/
 ```
 
-```terminal
+```shell
 hugo serve  --themesDir ../..
 ```
 
