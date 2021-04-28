@@ -51,7 +51,7 @@ On [GTmetrix](https://gtmetrix.com) it's scoring **A** and on [Google Page Speed
 ![GTmetrix](https://github.com/fabston/Hugo-Theme-Priam/blob/main/images/gtmetrix.png)
 
 ## How can I help?
-All kinds of contributions are welcome 🙌! The most basic way to show your support is to `⭐️ star` the project, or raise [`🐞 issues`](https://github.com/fabston/Hugo-Theme-Priam/issues/new/choose).
+All kinds of contributions are welcome 🙌! The most basic way to show your support is to `⭐️ star` the project, or raise [`🐞 issues`](https://github.com/fabston/Hugo-Theme-Priam/issues/new/choose). You can also support this project by becoming a [sponsor on GitHub](https://github.com/sponsors/fabston) to ensure this journey continues indefinitely! 🚀
 
 ***
 
