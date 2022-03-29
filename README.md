@@ -6,7 +6,7 @@
 
 **Priam** is a fast, clean, responsive Hugo theme. The theme was inspired by [XMin](https://github.com/yihui/hugo-xmin). XMin is based on simplicity while this theme is also focusing on styling and other useful functionalities.
 
-[![Mockup](https://github.com/fabston/Hugo-Theme-Priam/blob/main/images/mockup.png)](https://priam.fabston.dev)
+[![Mockup](https://github.com/fabston/Hugo-Theme-Priam/blob/main/images/mockup.png)](https://hugo-priam.netlify.app/)
 
 ### Features:
 - Extended Shortcodes
@@ -51,10 +51,11 @@ On [GTmetrix](https://gtmetrix.com) it's scoring **A** and on [Google Page Speed
 ![GTmetrix](https://github.com/fabston/Hugo-Theme-Priam/blob/main/images/gtmetrix.png)
 
 ## How can I help?
-All kinds of contributions are welcome 🙌! The most basic way to show your support is to `⭐️ star` the project, or raise [`🐞 issues`](https://github.com/fabston/Hugo-Theme-Priam/issues/new/choose). You can also support this project by becoming a [sponsor on GitHub](https://github.com/sponsors/fabston) to ensure this journey continues indefinitely! 🚀
 
-***
+All kinds of contributions are welcome 🙌! The most basic way to show your support is to `⭐️ star` the project, or raise [`🐞 issues`](https://github.com/fabston/hugo-theme-priam/issues).
+
+---
 
 <p align="center">
-    <a href="https://www.buymeacoffee.com/fabston"><img alt="Buy Me A Coffee" title="☕️" src="https://raw.githubusercontent.com/fabston/Hugo-Theme-Priam/master/images/bmac.png" width=200px></a>
+    <a href="https://www.buymeacoffee.com/fabston"><img alt="Buy Me A Coffee" title="☕️" src="https://github.com/fabston/little-snitch-blocklist/blob/main/assets/bmac.png?raw=true" width=200px></a>
 </p>
